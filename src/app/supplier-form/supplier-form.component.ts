@@ -49,6 +49,7 @@ export class SupplierFormComponent implements OnInit {
     if (this.editing) {
       this.supplierService.updateSupplier(supplier).subscribe(() => {
         this.loadSuppliers();
+        this.cancelEdit();
       });
     } else {
       this.supplierService.addSupplier(supplier).subscribe(() => {
@@ -73,6 +74,12 @@ export class SupplierFormComponent implements OnInit {
     this.supplierService.deleteSupplier(id).subscribe(() => {
       this.loadSuppliers();
     });
+  }
+
+  cancelEdit() {
+    this.editing = false;
+    this.editingSupplierId = null;
+    this.supplierForm.reset();
   }
 }
 
