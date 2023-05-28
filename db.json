@@ -1,0 +1,11 @@
+{
+  "suppliers": [
+    {
+      "id": 3,
+      "name": "Frutas cristalizadas Joana LTDA.",
+      "active": true,
+      "category": "regional",
+      "contact": "1198776-2233"
+    }
+  ]
+}

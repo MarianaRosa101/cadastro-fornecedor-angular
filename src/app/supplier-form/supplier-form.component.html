@@ -1,0 +1,65 @@
+<div class="container">
+    <h2>Cadastro de Fornecedor</h2>
+  
+    <form [formGroup]="supplierForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" formControlName="name" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="active">Ativo:</label>
+        <div class="form-check">
+          <input type="checkbox" formControlName="active" class="form-check-input">
+          <label class="form-check-label" for="active">Sim</label>
+        </div>
+      </div>
+      
+  
+      <div class="form-group">
+        <label for="category">Categoria:</label>
+        <select formControlName="category" class="form-control">
+          <option value="">Selecione</option>
+          <option value="regional">Regional</option>
+          <option value="nacional">Nacional</option>
+          <option value="internacional">Internacional</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="contact">Contato:</label>
+        <input type="text" formControlName="contact" class="form-control">
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+  
+    <h2>Fornecedores Cadastrados</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Ativo</th>
+          <th>Categoria</th>
+          <th>Contato</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let supplier of suppliers">
+          <td>{{ supplier.id }}</td>
+          <td>{{ supplier.name }}</td>
+          <td>{{ supplier.active ? 'Sim' : 'Não' }}</td>
+          <td>{{ supplier.category }}</td>
+          <td>{{ supplier.contact }}</td>
+          <td>
+            <button type="button" class="btn btn-primary btn-sm" (click)="editSupplier(supplier)">Editar</button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="deleteSupplier(supplier.id)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

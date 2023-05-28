@@ -1,0 +1,21 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .table {
+    margin-top: 10px;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    margin-right: 10px;
+  }
+  
